@@ -7,6 +7,7 @@ class AddMenu extends Component {
     user_list: null,
     hkname: "",
     name: "",
+    img: "",
     cost: "",
     count: ""
   };
@@ -52,14 +53,18 @@ class AddMenu extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container" style={{ paddingTop: "50px" }}>
         <div className="AddUser-Wrapper">
-          <div className="title">Add Menu Item for {this.state.hkname}: </div>
-          <form onSubmit={this.handlerSubmit}>
+          <h5 className="title">Logged in as {this.state.hkname} </h5>
+          <h3>
+            {" "}
+            <b>Fill out to add menu item</b>{" "}
+          </h3>
+          <form onSubmit={this.handlerSubmit} style={{ marginTop: "50px" }}>
             <label htmlFor="name">Name:</label>
             <input
               type="text"
-              placeholder="For example: Rajiv Ipsoo"
+              placeholder="For example: Onion and Corn Samosas"
               name="name"
               onChange={this.onChangeHandler}
               ref="name"
@@ -96,11 +101,19 @@ class AddMenu extends Component {
               required
               id="cost"
             />
-            <div className="container-btn">
-              <button type="submit" className="Add-User-Submit">
+            <div className="container-btn" style={{ marginTop: "50px" }}>
+              <button
+                type="submit"
+                className="btn btn-large"
+                style={{ width: "150px" }}
+              >
                 Submit
               </button>
-              <button type="reset" className="Add-User-Reset">
+              <button
+                type="reset"
+                className="btn btn-large"
+                style={{ width: "150px", marginLeft: "20px" }}
+              >
                 Reset
               </button>
             </div>

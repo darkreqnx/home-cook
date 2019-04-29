@@ -28,6 +28,7 @@
     "nodemon": "^1.18.11",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "react-load-image": "^0.1.7",
     "validator": "^10.11.0"
   }
 }

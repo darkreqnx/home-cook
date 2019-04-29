@@ -19,7 +19,7 @@ class NavBar extends Component {
     if (this.props.auth.isAuthenticated) {
       logout = (
         <button onClick={this.onLogoutClick} className="btn btn-large">
-          Logout
+          LOGOUT
         </button>
       );
     } else {
@@ -47,13 +47,13 @@ class NavBar extends Component {
           userLinks = (
             <React.Fragment>
               <NavLink to="/chome" className="NavBar-Link">
-                Home
+                HOME
               </NavLink>
               <NavLink to="/addDeli" className="NavBar-Link">
-                Add Delivery Personnel
+                ADD DELIVERY PERSONNEL
               </NavLink>
               <NavLink to="/addHK" className="NavBar-Link">
-                Add Home Kitchen
+                ADD HK
               </NavLink>
             </React.Fragment>
           );
@@ -63,13 +63,13 @@ class NavBar extends Component {
           userLinks = (
             <React.Fragment>
               <NavLink to="/chome" className="NavBar-Link">
-                Home
+                HOME
               </NavLink>
               <NavLink to="/addMenu" className="NavBar-Link">
-                Add Menu Item
+                ADD MENU ITEM
               </NavLink>
               <NavLink to="/hkorders" className="NavBar-Link">
-                Orders
+                ORDERS
               </NavLink>
             </React.Fragment>
           );
@@ -79,7 +79,7 @@ class NavBar extends Component {
           userLinks = (
             <React.Fragment>
               <NavLink to="/chome" className="NavBar-Link">
-                Home
+                HOME
               </NavLink>
             </React.Fragment>
           );

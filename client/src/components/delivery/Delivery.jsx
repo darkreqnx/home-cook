@@ -123,6 +123,7 @@ class DOrders extends Component {
     if (this.state.flag) {
       avail = (
         <button
+          className="btn btn-large"
           onClick={() => {
             this.handleOpen();
           }}
@@ -133,6 +134,7 @@ class DOrders extends Component {
     } else {
       avail = (
         <button
+          className="btn btn-large"
           onClick={() => {
             this.handleClose();
           }}
@@ -144,8 +146,8 @@ class DOrders extends Component {
     return (
       <React.Fragment>
         <div className="container">
-          <h3>
-            Delivery Person: <b>{this.props.user}</b>
+          <h3 style={{ paddingTop: "100px" }}>
+            Logged in as <b>{this.props.user}</b>
           </h3>
           <div className="cart">
             <h5>ORDERS</h5>

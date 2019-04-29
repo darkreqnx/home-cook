@@ -15,6 +15,9 @@ const menuSchema = new mongoose.Schema({
     maxlength: 33,
     trim: true
   },
+  img: {
+    type: String
+  },
   cost: {
     type: Number,
     min: 10,

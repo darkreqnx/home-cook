@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import axios from "axios";
 import "./Chome.css";
+import ImageLoader from "react-load-image";
 
 import {
   addToCart,
@@ -45,28 +46,42 @@ class Chome extends Component {
   render() {
     let localData = this.props.cart;
     let itemList = localData.data.map(item => {
+      const img = item.img;
+      console.log("below this");
+      console.log(typeof img);
+      console.log(typeof "String");
       return (
         <div classNmae="all-holder">
           <div className="card" key={item._id}>
             <div className="card-content">
-              <p>
-                <b>{item.name}</b>
-                <br />
-                <b>Home Kitchen: {item.hkname}</b>
-                <br />
-                <b>Price: ₹{item.cost}</b>
-                <br />
-                <b>Quantity: {item.count}</b>
-              </p>
-              <button
-                className="btn btn-large"
-                id="button"
-                onClick={() => {
-                  this.handleClick(item._id);
-                }}
-              >
-                Add to Cart
-              </button>
+              <div className="col col-1">
+                <div className="row">
+                  <ImageLoader src={img}>
+                    <img />
+                  </ImageLoader>
+                  {/* <img src={require(item.img)} /> */}
+                </div>
+                <div className="col col-2">
+                  <p>
+                    <b>{item.name}</b>
+                    <br />
+                    <b>Home Kitchen: {item.hkname}</b>
+                    <br />
+                    <b>Price: ₹{item.cost}</b>
+                    <br />
+                    <b>Quantity: {item.count}</b>
+                  </p>
+                  <button
+                    className="btn btn-large"
+                    id="button"
+                    onClick={() => {
+                      this.handleClick(item._id);
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -138,6 +138,7 @@ router.post("/menu/", async (req, res) => {
     const newMenu = await Menu.create({
       hkname: req.body.hkname,
       name: req.body.name,
+      img: "",
       cost: req.body.cost,
       count: req.body.count
     });
