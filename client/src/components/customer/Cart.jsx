@@ -30,16 +30,7 @@ class Cart extends Component {
 
   handleCheckout = async e => {
     try {
-<<<<<<< HEAD
-      // let save = th
       let arr = [];
-      for (var i = 0; i < this.props.items.length; i++) {
-        let temp = this.props.items[i];
-        arr.push({ name: temp.name, cost: temp.cost, count: temp.count });
-      }
-=======
-      let arr = [];
->>>>>>> 12edabc5aeecaf32f1c813ae88abdf146556a3ed
       for (var i = 0; i < this.props.items.length; i++) {
         let temp = this.props.items[i];
         arr.push({ name: temp.name, count: temp.count, cost: temp.cost });

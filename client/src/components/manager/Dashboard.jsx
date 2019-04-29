@@ -190,7 +190,7 @@ class DashBoard extends Component {
               </span>
             </Container> */}
         {/* </Container> */}
-        {/* </Nav> */} */}
+        {/* </Nav> */}
         {/* static navbar - bottom */}
         {/* <Nav className="navbar fixed-top nav-secondary is-dark is-light-text">
           <Container className="text-medium">Summary</Container>
@@ -278,30 +278,26 @@ class DashBoard extends Component {
               </Container>
             </Container>
           </Container> */}{" "}
-        */}
         {/* row 2 - conversion */}
-        <Container className="row">
-          {/* <Container className="col-md-4 col-lg-3 is-light-text mb-4">
-            <Container className="card grid-card is-card-dark">
-              <Container className="card-heading mb-3">
-                <Container className="is-dark-text-light letter-spacing text-small">
-                  Product Views
-                </Container>
-              </Container>
-              <Container className="card-value pt-4 text-x-large">
-                {this.state.productViews}
-                <span className="text-medium pl-2 is-dark-text-light">
-                  views
-                </span>
-              </Container>
-            </Container>
-          </Container> */}
-
-          <Container className="col-md-8 col-lg-9 is-light-text mb-4">
+        <Container
+          className="row"
+          style={{
+            paddingLeft: "300px"
+          }}
+        >
+          <Container
+            className="col-md-8 col-lg-9 is-light-text mb-4"
+            style={{
+              paddingTop: "100px"
+            }}
+          >
             <Container className="card is-card-dark chart-card">
               <Container className="row full-height">
                 <Container className="col-sm-4 full height">
-                  <Container className="chart-container full-height">
+                  <Container
+                    className="chart-container full-height"
+                    style={{ fontSize: "50px" }}
+                  >
                     <ReactFC
                       {...{
                         type: "doughnut2d",
@@ -332,97 +328,108 @@ class DashBoard extends Component {
                     />
                   </Container>
                 </Container>
-                <Container className="col-sm-4 full-height border-left border-right">
-                  <Container className="chart-container full-height">
-                    <ReactFC
-                      {...{
-                        type: "doughnut2d",
-                        width: "100%",
-                        height: "100%",
-                        dataFormat: "json",
-                        containerBackgroundOpacity: "0",
-                        dataSource: {
-                          chart: {
-                            caption: "Checkout Rate",
-                            theme: "ecommerce",
-                            defaultCenterLabel: `${this.state.checkoutRate}%`,
-                            paletteColors: "#41B6C4, #000000"
-                          },
-                          data: [
-                            {
-                              label: "active",
-                              value: `${this.state.checkoutRate}`
-                            },
-                            {
-                              label: "inactive",
-                              alpha: 5,
-                              value: `${100 - this.state.checkoutRate}`
+                <Container className="card is-card-dark chart-card">
+                  <Container className="row full-height">
+                    <Container className="col-sm-4 full-height border-left border-right">
+                      <Container className="chart-container full-height">
+                        <ReactFC
+                          {...{
+                            type: "doughnut2d",
+                            width: "100%",
+                            height: "100%",
+                            dataFormat: "json",
+                            containerBackgroundOpacity: "0",
+                            dataSource: {
+                              chart: {
+                                caption: "Checkout Rate",
+                                theme: "ecommerce",
+                                defaultCenterLabel: `${
+                                  this.state.checkoutRate
+                                }%`,
+                                paletteColors: "#41B6C4, #000000"
+                              },
+                              data: [
+                                {
+                                  label: "active",
+                                  value: `${this.state.checkoutRate}`
+                                },
+                                {
+                                  label: "inactive",
+                                  alpha: 5,
+                                  value: `${100 - this.state.checkoutRate}`
+                                }
+                              ]
                             }
-                          ]
-                        }
-                      }}
-                    />
+                          }}
+                        />
+                      </Container>
+                    </Container>
                   </Container>
                 </Container>
-                <Container className="col-sm-4 full-height">
-                  <Container className="chart-container full-height">
-                    <ReactFC
-                      {...{
-                        type: "doughnut2d",
-                        width: "100%",
-                        height: "100%",
-                        dataFormat: "json",
-                        containerBackgroundOpacity: "0",
-                        dataSource: {
-                          chart: {
-                            caption: "Abandoned Cart Rate",
-                            theme: "ecommerce",
-                            defaultCenterLabel: `${this.state.abandonedRate}%`,
-                            paletteColors: "#EDF8B1, #000000"
-                          },
-                          data: [
-                            {
-                              label: "active",
-                              value: `${this.state.abandonedRate}`
-                            },
-                            {
-                              label: "inactive",
-                              alpha: 5,
-                              value: `${100 - this.state.abandonedRate}`
+                <Container className="card is-card-dark chart-card">
+                  <Container className="row full-height">
+                    <Container className="col-sm-4 full-height">
+                      <Container className="chart-container full-height">
+                        <ReactFC
+                          {...{
+                            type: "doughnut2d",
+                            width: "100%",
+                            height: "100%",
+                            dataFormat: "json",
+                            containerBackgroundOpacity: "0",
+                            dataSource: {
+                              chart: {
+                                caption: "Abandoned Cart Rate",
+                                theme: "ecommerce",
+                                defaultCenterLabel: `${
+                                  this.state.abandonedRate
+                                }%`,
+                                paletteColors: "#EDF8B1, #000000"
+                              },
+                              data: [
+                                {
+                                  label: "active",
+                                  value: `${this.state.abandonedRate}`
+                                },
+                                {
+                                  label: "inactive",
+                                  alpha: 5,
+                                  value: `${100 - this.state.abandonedRate}`
+                                }
+                              ]
                             }
-                          ]
-                        }
-                      }}
-                    />
+                          }}
+                        />
+                      </Container>
+                    </Container>
                   </Container>
                 </Container>
               </Container>
-            </Container>
-          </Container>
-        </Container>
-        {/* row 3 - orders trend */}
-        <Container className="row" style={{ minHeight: "400px" }}>
-          <Container className="col-md-6 mb-4">
-            <Container className="card is-card-dark chart-card">
-              <Container className="chart-container large full-height">
-                <ReactFC
-                  {...{
-                    type: "bar2d",
-                    width: "100%",
-                    height: "100%",
-                    dataFormat: "json",
-                    containerBackgroundOpacity: "0",
-                    dataEmptyMessage: "Loading Data...",
-                    dataSource: {
-                      chart: {
-                        theme: "ecommerce",
-                        caption: "Orders Trend",
-                        subCaption: "By Stores"
-                      },
-                      data: this.state.ordersTrendStore
-                    }
-                  }}
-                />
+              <Container className="row" style={{ minHeight: "400px" }}>
+                <Container className="col-md-6 mb-4">
+                  <Container className="card is-card-dark chart-card">
+                    <Container className="chart-container large full-height">
+                      <ReactFC
+                        {...{
+                          type: "bar2d",
+                          width: "100%",
+                          height: "100%",
+                          dataFormat: "json",
+                          containerBackgroundOpacity: "0",
+                          dataEmptyMessage: "Loading Data...",
+                          dataSource: {
+                            chart: {
+                              theme: "ecommerce",
+                              caption: "Orders Trend",
+                              subCaption: "By Stores"
+                            },
+                            data: this.state.ordersTrendStore
+                          }
+                        }}
+                      />
+                    </Container>
+                  </Container>
+                </Container>
               </Container>
             </Container>
           </Container>

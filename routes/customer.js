@@ -207,11 +207,7 @@ router.post("/order/", async (req, res) => {
       cust_uname: req.body.cust_uname,
       hk_uname: req.body.hk_uname,
       del_uname: req.body.del_uname,
-<<<<<<< HEAD
-      food_details = req.body.food_details,
-=======
       food_details: req.body.food_details,
->>>>>>> 12edabc5aeecaf32f1c813ae88abdf146556a3ed
       total: req.body.total,
       order_status: req.body.order_status
     });
