@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   removeItem,
@@ -9,6 +8,7 @@ import {
   updateOrders
 } from "../../actions/cartActions";
 import axios from "axios";
+import Gmap from "./Gmap";
 
 class DOrders extends Component {
   state = {
@@ -149,6 +149,9 @@ class DOrders extends Component {
           <h3 style={{ paddingTop: "100px" }}>
             Logged in as <b>{this.props.user}</b>
           </h3>
+          <div className="container">
+            <Gmap />
+          </div>
           <div className="cart">
             <h5>ORDERS</h5>
             {avail}

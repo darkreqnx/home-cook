@@ -17,6 +17,7 @@ import AddMenu from "./hk/AddMenu";
 import HKOrders from "./hk/Orders.jsx";
 import Delivery from "./delivery/Delivery";
 import MOrders from "./manager/MOrders";
+import Dashboard from "./manager/Dashboard";
 
 class Master extends Component {
   render() {
@@ -37,6 +38,7 @@ class Master extends Component {
             <PrivateRoute exact path="/addDeli" component={AddDeli} />
             <PrivateRoute exact path="/addHK" component={AddHK} />
             <PrivateRoute exact path="/morders/:name" component={MOrders} />
+            <PrivateRoute exact path="/dash" component={Dashboard} />
           </Switch>
         );
         break;
