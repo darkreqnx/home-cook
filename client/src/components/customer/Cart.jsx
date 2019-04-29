@@ -30,14 +30,24 @@ class Cart extends Component {
 
   handleCheckout = async e => {
     try {
+<<<<<<< HEAD
       // let save = th
       let arr = [];
       for (var i = 0; i < this.props.items.length; i++) {
         let temp = this.props.items[i];
         arr.push({ name: temp.name, cost: temp.cost, count: temp.count });
       }
+=======
+      let arr = [];
+>>>>>>> 12edabc5aeecaf32f1c813ae88abdf146556a3ed
       for (var i = 0; i < this.props.items.length; i++) {
         let temp = this.props.items[i];
+        arr.push({ name: temp.name, count: temp.count, cost: temp.cost });
+      }
+
+      for (var i = 0; i < this.props.items.length; i++) {
+        let temp = this.props.items[i];
+        // arr.push({ name: temp.name, count: temp.count, cost: temp.cost });
         let org_item = this.props.data.find(item => item._id === temp._id);
         if (org_item.count >= temp.count) {
           org_item.count -= temp.count;
@@ -45,7 +55,9 @@ class Cart extends Component {
             count: org_item.count,
             _id: org_item._id
           });
+          // console.log(temp);
           // Update Database
+          console.log(arr);
           const newOrder = await axios.post("/api/order/", {
             cust_uname: this.props.custname,
             hk_uname: org_item.hkname,

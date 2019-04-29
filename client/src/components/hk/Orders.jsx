@@ -71,6 +71,7 @@ class Orders extends Component {
     var addedItems;
     if (this.state.orders.length > 0) {
       addedItems = this.state.orders.map(item => {
+<<<<<<< HEAD
         console.log("PLEASE");
         console.log(item);
         let food_order = item.food_details.map(it => {
@@ -83,6 +84,9 @@ class Orders extends Component {
             </React.Fragment>
           );
         });
+=======
+        console.log(item);
+>>>>>>> 12edabc5aeecaf32f1c813ae88abdf146556a3ed
         return (
           <React.Fragment>
             <div className="collection-item avatar" key={item._id}>
