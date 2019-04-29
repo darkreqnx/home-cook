@@ -51,8 +51,12 @@ class Chome extends Component {
       console.log(typeof img);
       console.log(typeof "String");
       return (
-        <div classNmae="all-holder">
-          <div className="card" key={item._id}>
+        <div className="all-holder">
+          <div
+            className="card"
+            key={item._id}
+            style={{ paddingBottom: "250px" }}
+          >
             <div className="card-content">
               <div className="col col-1">
                 <div className="row">

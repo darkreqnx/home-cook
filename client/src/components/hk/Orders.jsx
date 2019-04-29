@@ -71,53 +71,73 @@ class Orders extends Component {
     var addedItems;
     if (this.state.orders.length > 0) {
       addedItems = this.state.orders.map(item => {
+        console.log("PLEASE");
+        console.log(item);
+        let food_order = item.food_details.map(it => {
+          return (
+            <React.Fragment>
+              <p>Food Item: {it.name}</p>
+              <br />
+              <p>Count: {it.count}</p>
+              <br />
+            </React.Fragment>
+          );
+        });
         return (
           <React.Fragment>
             <div className="collection-item avatar" key={item._id}>
               <div className="item-desc">
-                <span className="title">{item.cust_uname}</span>
-                <span className="title">{item.hk_uname}</span>
-                <span className="title">{item.del_uname}</span>
-                <span className="title">{item.total}</span>
+                <span className="title">Customer Name: {item.cust_uname}</span>
+                <br />
+                {/* <span className="title">{item.hk_uname}</span> */}
+                <span className="title">Delivery Agent: {item.del_uname}</span>
+                <br />
+                <span className="title">Total bill amount: {item.total}</span>
                 {/* <p>{item.desc}</p> */}
-                <p>
-                  <b>Quantity: {item.count}</b>
-                  <b>Order Status: {item.order_status}</b>
-                </p>
-                <div className="add-remove">
-                  <Link to="/hkorders">
-                    <button
-                      onClick={() => {
-                        this.handleAcceptOrder(item._id);
-                      }}
-                    >
-                      Accept
-                    </button>
-                  </Link>
-                </div>
-                <div className="add-remove">
-                  <Link to="/hkorders">
-                    <button
-                      onClick={() => {
-                        this.handleDeliverOrder(item._id);
-                      }}
-                    >
-                      Deliver
-                    </button>
-                  </Link>
-                </div>
-                <div className="add-remove">
-                  <Link to="/hkorders">
-                    <button
-                      onClick={() => {
-                        this.handleCancelOrder(item._id);
-                      }}
-                    >
-                      Cancel
-                    </button>
-                  </Link>
+
+                <div className="row">
+                  <div className="col add-remove">
+                    <Link to="/hkorders">
+                      <button
+                        className="btn btn-large"
+                        onClick={() => {
+                          this.handleAcceptOrder(item._id);
+                        }}
+                      >
+                        Accept
+                      </button>
+                    </Link>
+                  </div>
+                  <div className="col add-remove">
+                    <Link to="/hkorders">
+                      <button
+                        className="btn btn-large"
+                        onClick={() => {
+                          this.handleDeliverOrder(item._id);
+                        }}
+                      >
+                        Deliver
+                      </button>
+                    </Link>
+                  </div>
+                  <div className="col add-remove">
+                    <Link to="/hkorders">
+                      <button
+                        className="btn btn-large"
+                        onClick={() => {
+                          this.handleCancelOrder(item._id);
+                        }}
+                      >
+                        Cancel
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
+              <p>
+                {food_order}
+                <b>Order Status: {item.order_status}</b>
+              </p>
             </div>
           </React.Fragment>
         );
@@ -142,6 +162,7 @@ class Orders extends Component {
     if (this.state.flag) {
       avail = (
         <button
+          className="btn tbn-large"
           onClick={() => {
             this.handleOpen();
           }}
@@ -152,6 +173,7 @@ class Orders extends Component {
     } else {
       avail = (
         <button
+          className="btn tbn-large"
           onClick={() => {
             this.handleClose();
           }}
@@ -164,8 +186,8 @@ class Orders extends Component {
       <React.Fragment>
         <div className="container">
           <div className="cart">
+            State of functioning: {avail}
             <h5>ORDERS</h5>
-            {avail}
             <ul className="collection">{addedItems}</ul>
           </div>
         </div>

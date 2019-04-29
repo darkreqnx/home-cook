@@ -30,6 +30,12 @@ class Cart extends Component {
 
   handleCheckout = async e => {
     try {
+      // let save = th
+      let arr = [];
+      for (var i = 0; i < this.props.items.length; i++) {
+        let temp = this.props.items[i];
+        arr.push({ name: temp.name, cost: temp.cost, count: temp.count });
+      }
       for (var i = 0; i < this.props.items.length; i++) {
         let temp = this.props.items[i];
         let org_item = this.props.data.find(item => item._id === temp._id);
@@ -45,7 +51,8 @@ class Cart extends Component {
             hk_uname: org_item.hkname,
             del_uname: "Default",
             total: this.props.total,
-            order_status: "accepted"
+            order_status: "accepted",
+            food_details: arr
           });
           console.log(newOrder);
           this.props.checkout();

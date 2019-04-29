@@ -207,7 +207,7 @@ router.post("/order/", async (req, res) => {
       cust_uname: req.body.cust_uname,
       hk_uname: req.body.hk_uname,
       del_uname: req.body.del_uname,
-      // food_details.name = req.body.food_details.name,
+      food_details = req.body.food_details,
       total: req.body.total,
       order_status: req.body.order_status
     });
